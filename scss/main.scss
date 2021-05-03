@@ -1,14 +1,31 @@
+@import 'mixins';
+@import 'variables';
+@import 'fonts';
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: $mainFontRegular
+}
+
 .container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1170px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
+}
+
+.landing-ttl {
+    @include title(300, $mainFontLight);
+    color: $lightGrayColor;
+    &__accent {
+        font-family: $mainFontBold;
+        color: #000;
+    }
 }
 
 .header {
@@ -16,11 +33,14 @@
 }
 
 .header__container,
+.slider-section,
 .slider-section__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
+.slider-section,
 .slider-section__container {
     flex-direction: row-reverse;
 }
@@ -37,11 +57,18 @@
         list-style-type: none;
     }
     &__link {
+        position: relative;
+        padding: .3em 0;
         text-decoration: none;
         color: #000;
+        border: 1px solid transparent;
+        border-right: none;
+        border-left: none;
         text-transform: uppercase;
+        transition: border .3s;
+        &.active,
         &:hover {
-            color: red;
+            border-color: #000;
         } 
     }
 }

@@ -1,14 +1,57 @@
+@font-face {
+  font-family: "TT Hoves Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/TT Hoves/TTHoves-Regular.ttf") format("truetype"), url("../fonts/TT Hoves/TTHoves-Regular.woff") format("woff"), url("../fonts/TT Hoves/TTHoves-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TT Hoves Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/TT Hoves/TTHoves-Light.ttf") format("truetype"), url("../fonts/TT Hoves/TTHoves-Light.woff") format("woff"), url("../fonts/TT Hoves/TTHoves-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TT Hoves Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/TT Hoves/TTHoves-Medium.ttf") format("truetype"), url("../fonts/TT Hoves/TTHoves-Medium.woff") format("woff"), url("../fonts/TT Hoves/TTHoves-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TT Hoves Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/TT Hoves/TTHoves-Bold.ttf") format("truetype"), url("../fonts/TT Hoves/TTHoves-Bold.woff") format("woff"), url("../fonts/TT Hoves/TTHoves-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SF ProDisplay Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/SF ProDisplay/SFProDisplay-Bold.ttf") format("truetype"), url("../fonts/SF ProDisplay/SFProDisplay-Bold.woff") format("woff"), url("../fonts/SF ProDisplay/SFProDisplay-Bold.woff2") format("woff2");
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: "TT Hoves Regular";
+}
+
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1170px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
+}
+
+.landing-ttl {
+  font-family: 300 64px "TT Hoves Light";
+  color: #F2F2F2;
+}
+.landing-ttl__accent {
+  font-family: "TT Hoves Bold";
+  color: #000;
 }
 
 .header {
@@ -16,11 +59,14 @@
 }
 
 .header__container,
+.slider-section,
 .slider-section__container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
+.slider-section,
 .slider-section__container {
   flex-direction: row-reverse;
 }
@@ -36,12 +82,18 @@
   list-style-type: none;
 }
 .nav__link {
+  position: relative;
+  padding: 0.3em 0;
   text-decoration: none;
   color: #000;
+  border: 1px solid transparent;
+  border-right: none;
+  border-left: none;
   text-transform: uppercase;
+  transition: border 0.3s;
 }
-.nav__link:hover {
-  color: red;
+.nav__link.active, .nav__link:hover {
+  border-color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */
