@@ -26,12 +26,99 @@
   font-family: "SF ProDisplay Bold";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/SF ProDisplay/SFProDisplay-Bold.ttf") format("truetype"), url("../fonts/SF ProDisplay/SFProDisplay-Bold.woff") format("woff"), url("../fonts/SF ProDisplay/SFProDisplay-Bold.woff2") format("woff2");
+  src: url("../fonts/SF Pro Display/SFProDisplay-Bold.ttf") format("truetype"), url("../fonts/SF Pro Display/SFProDisplay-Bold.woff") format("woff"), url("../fonts/SF Pro Display/SFProDisplay-Bold.eot?") format("eot");
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.read-more {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 222px;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 12px;
+  line-height: 1;
+  color: #333;
+  background-color: #fff;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.read-more.dark {
+  background-color: #333;
+  color: #fff;
+}
+.read-more:hover {
+  border-bottom-color: #333;
+}
+.read-more:hover span {
+  transform: translateX(10px);
+}
+.read-more span {
+  margin-left: 10px;
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.arrows-wrap {
+  position: relative;
+  margin: 90px 0;
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.arrows-wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  height: 1px;
+  width: 1000px;
+  transform: translateY(-50%);
+  background-color: #F2F2F2;
+}
+
+.arrow {
+  height: 53px;
+  width: 53px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border: 1px solid #F2F2F2;
+  background-color: #F9F9F9;
+  color: #333;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.arrow:hover {
+  border-color: #cccccc;
+}
+.arrow.disabled {
+  background-color: #fff;
+  cursor: auto;
+}
+.arrow.disabled:hover {
+  border-color: #F2F2F2;
+}
+.arrow + .arrow {
+  margin-left: 23px;
+}
+.arrow::after {
+  display: none;
+}
+
+.slider__btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 body {
@@ -46,12 +133,17 @@ body {
 }
 
 .landing-ttl {
-  font-family: 300 64px "TT Hoves Light";
+  font: 300 64px "TT Hoves Light";
   color: #F2F2F2;
 }
 .landing-ttl__accent {
   font-family: "TT Hoves Bold";
   color: #000;
+}
+@media screen and (max-width: 992px) {
+  .landing-ttl {
+    font-size: 50px;
+  }
 }
 
 .header {
@@ -69,6 +161,28 @@ body {
 .slider-section,
 .slider-section__container {
   flex-direction: row-reverse;
+}
+
+.swiper-pagination {
+  width: 142px;
+  position: static;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 23px;
+  line-height: 1;
+}
+.swiper-pagination span {
+  color: #bdbdbd;
+}
+.swiper-pagination .separator {
+  display: inline-block;
+  position: absolute;
+  left: calc((100% - 44px) / 2);
+  width: 44px;
+  height: 2px;
+  background-color: #e0e0e0;
+  transform: translateY(2px) rotate(-45deg);
 }
 
 .right-wrap {
@@ -94,6 +208,180 @@ body {
 }
 .nav__link.active, .nav__link:hover {
   border-color: #000;
+}
+
+.about {
+  margin-top: 120px;
+  padding: 30px 70px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fbfbfb;
+  background: #000;
+}
+.about__left {
+  max-width: 570px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.about .img-wrap-left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  margin-bottom: -60px;
+}
+.about .img-wrap-left .img-wrap:first-of-type {
+  margin-bottom: 30px;
+}
+.about .img-wrap {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+}
+.about .img-wrap-right {
+  align-self: flex-end;
+}
+.about__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.about__right {
+  max-width: 400px;
+}
+.about .landing-ttl, .about__text {
+  margin-bottom: 20px;
+}
+
+.tasks__list {
+  counter-reset: section;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.tasks__item {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.tasks__item::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  margin-right: 30px;
+  display: inline-block;
+  color: #F2F2F2;
+  line-height: 0.8;
+  font-size: 200px;
+  font-family: "SF ProDisplay Bold";
+}
+.tasks .landing-ttl {
+  margin-bottom: 60px;
+}
+.tasks__text {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.projects__ttl-top {
+  margin-bottom: 60px;
+}
+.projects__block {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+@media screen and (max-width: 800px) {
+  .projects__block {
+    flex-direction: column;
+  }
+}
+.projects__img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: inherit;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.projects__item + .projects__item {
+  margin-left: 30px;
+}
+@media screen and (max-width: 800px) {
+  .projects__item + .projects__item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.projects__item {
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+  padding: 5%;
+  width: 100%;
+  max-width: 570px;
+  height: 255px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media screen and (max-width: 800px) {
+  .projects__item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.projects__item:hover::after {
+  opacity: 0.5;
+}
+.projects__item:hover .projects__inner {
+  transform: scale(1);
+  opacity: 1;
+}
+.projects__item::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.projects__ttl {
+  font-family: "TT Hoves Bold";
+  word-break: break-all;
+  color: #fff;
+  line-height: 1;
+}
+@media screen and (max-width: 800px) {
+  .projects__ttl {
+    word-break: normal;
+  }
+}
+@media screen and (max-width: 400px) {
+  .projects__ttl {
+    word-break: break-all;
+  }
+}
+.projects__link {
+  padding: 9px;
+  color: #fff;
+  justify-content: start;
+  background-color: transparent;
+  border: 0;
+}
+.projects__inner {
+  transition: 0.3s;
+  opacity: 0;
+  transform: scale(2);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -41,7 +41,7 @@
 //fonts
 
 @mixin title($fontW,$fontF) {
-	font-family: $fontW 64px $fontF;
+	font: $fontW 64px $fontF;
 }
 
 
