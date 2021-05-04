@@ -132,6 +132,25 @@ body {
   padding: 0 15px;
 }
 
+.section {
+  margin-bottom: 120px;
+}
+@media screen and (max-width: 992px) {
+  .section {
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .section {
+    margin-bottom: 40px;
+  }
+}
+
 .landing-ttl {
   font: 300 64px "TT Hoves Light";
   color: #F2F2F2;
@@ -414,6 +433,45 @@ body {
   transition: 0.3s;
   opacity: 0;
   transform: scale(2);
+}
+
+.footer {
+  background-color: #2C2C2C;
+}
+.footer__inner {
+  padding-top: 58px;
+  padding-bottom: 44px;
+}
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 23px;
+  text-align: center;
+  color: #fff;
+}
+.footer__list {
+  list-style-type: none;
+  display: flex;
+}
+.footer__list.socials .footer__list--inner {
+  flex-direction: row;
+}
+.footer__list--inner {
+  flex-direction: column;
+}
+.footer__item {
+  margin-bottom: 16px;
+  color: #fff;
+}
+.footer__item-ttl {
+  font-family: "TT Hoves Bold";
+}
+.footer__link {
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  color: inherit;
 }
 
 /*# sourceMappingURL=style.css.map */

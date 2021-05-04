@@ -106,6 +106,19 @@ body {
     padding: 0 15px;
 }
 
+.section {
+    margin-bottom: 120px;
+    @media screen and (max-width: 992px) {
+        margin-bottom: 100px;
+    }
+    @media screen and (max-width: 768px) {
+        margin-bottom: 60px;
+    }
+    @media screen and (max-width: 576px) {
+        margin-bottom: 40px;
+    }
+}
+
 .landing-ttl {
     @include title(300, $mainFontLight);
     color: $lightGrayColor;
@@ -400,5 +413,45 @@ body {
         transition: 0.3s;
         opacity: 0;
         transform: scale(2);
+    }
+}
+
+.footer {
+        background-color: $darkColor;
+    &__inner {
+        padding-top: 58px;
+        padding-bottom: 44px;
+    }
+    &__bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 23px;
+        text-align: center;
+        color: #fff;
+    }
+    &__list {
+        list-style-type: none;
+        display: flex;
+        &.socials &--inner {
+            flex-direction: row;
+        }
+        &--inner {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        margin-bottom: 16px;
+        color: #fff;
+    }
+    &__item-ttl {
+        font-family: $mainFontBold;
+    }
+    &__link {
+        display: inline-block;
+        text-transform: capitalize;
+        font-size: 14px;
+        line-height: 1.6;
+        text-decoration: none;
+        color: inherit;
     }
 }
