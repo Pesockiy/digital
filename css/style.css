@@ -474,4 +474,47 @@ body {
   color: inherit;
 }
 
+.contact__left {
+  max-width: 392px;
+}
+.contact .landing-ttl {
+  margin-bottom: 22px;
+}
+
+.form__input, .form__textarea {
+  display: block;
+  width: 100%;
+  padding: 14px 21px;
+  background-color: #F3F3F3;
+  border: none;
+  font-size: 14px;
+}
+.form__input:focus, .form__textarea:focus {
+  outline: none;
+}
+.form__input:focus + .form__placeholder, .form__textarea:focus + .form__placeholder {
+  display: none;
+}
+.form__input:empty + .form__placeholder, .form__textarea:empty + .form__placeholder {
+  display: block;
+}
+.form__input:empty:focus + .form__placeholder, .form__textarea:empty:focus + .form__placeholder {
+  display: none;
+}
+.form__group {
+  position: relative;
+  margin-bottom: 10px;
+}
+.form__placeholder {
+  position: absolute;
+  display: none;
+  top: 14px;
+  left: 21px;
+  color: #8D8D8D;
+}
+.form__placeholder.required::after {
+  content: "*";
+  color: red;
+}
+
 /*# sourceMappingURL=style.css.map */

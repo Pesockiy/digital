@@ -17,3 +17,15 @@ const swiper = new Swiper('.swiper-container', {
 
 
 });
+
+let inputs = [...document.querySelectorAll('input'),...document.querySelectorAll('textarea')];
+
+console.log(Array.isArray(inputs),inputs);
+
+for(i of inputs) {
+  i.addEventListener('change', () => {
+    if(i.value.length <= 0) {
+      console.log(i)
+    }
+  })
+}

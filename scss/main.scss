@@ -455,3 +455,52 @@ body {
         color: inherit;
     }
 }
+
+.contact {
+    &__left {
+        max-width: 392px;
+    }
+    .landing-ttl {
+        margin-bottom: 22px;    
+    }
+}
+
+.form {
+    &__input,
+    &__textarea {
+        display: block;
+        width: 100%;
+        padding: 14px 21px;
+        background-color: $accentColor;
+        border: none;
+        font-size: 14px;
+        &:focus {
+            outline: none;
+        }
+        &:focus + .form__placeholder {
+            display: none;
+        }
+        &:empty + .form__placeholder {
+            display: block;
+        }
+        &:empty:focus  + .form__placeholder {
+            display: none;
+        }
+    }
+    &__group {
+        position: relative;
+        margin-bottom: 10px;
+    }
+    &__placeholder {
+        position: absolute;
+        display: none;
+        top: 14px;
+        left: 21px;
+        color: #8D8D8D;
+        &.required::after {
+            content: '*';
+            
+            color:red;
+        }
+    }
+}
