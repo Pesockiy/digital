@@ -19,19 +19,19 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#" class="nav__link active">главная</a>
+              <a href="#slider" class="nav__link active">главная</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">галерея</a>
+              <a href="#about" class="nav__link">галерея</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">проекты</a>
+              <a href="#tasks" class="nav__link">проекты</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">сертификаты</a>
+              <a href="#project" class="nav__link">сертификаты</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">контакты</a>
+              <a href="#contact" class="nav__link">контакты</a>
             </li>
           </ul>
         </nav>
@@ -39,7 +39,7 @@
     </div>
   </header>
   <main class="main">
-    <section class="section slider-section">
+    <section id="slider" class="section slider-section">
       <div class="container slider-section__container ">
         <div class="swiper-container">
           <div class="swiper-wrapper right-wrap">
@@ -70,13 +70,15 @@
 
     </section>
     <div class="container">
-      <section class="about section">
+      <section id="about" class="about section">
         <div class="about__left">
           <div class="img-wrap-left">
             <div class="img-wrap"><img src="./img/about1.jpg" alt="" class="about__img"></div>
             <div class="img-wrap"><img src="./img/about3.jpg" alt="" class="about__img"></div>
           </div>
+          <!-- <div class="img-wrap"><img src="./img/about2.jpg" alt="" class="about__img"></div> -->
           <div class="img-wrap"><img src="./img/about2.jpg" alt="" class="about__img"></div>
+
         </div>
         <div class="about__right">
           <h1 class="landing-ttl">О компании</h1>
@@ -91,7 +93,7 @@
           <a href="#" class="read-more">читать<span>&#8594;</span></a>
 
       </section>
-      <section class="section tasks">
+      <section id="tasks" class="section tasks">
         <h1 class="landing-ttl">Основные задачи</h1>
         <ul class="tasks__list">
           <li class="tasks__item">
@@ -105,7 +107,7 @@
           </li>
         </ul>
       </section>
-      <section class="projects section">
+      <section id="project" class="projects section">
         <h1 class="landing-ttl projects__ttl-top">Наши проекты</h1>
         <div class="projects__block">
           <div class="projects__item">
@@ -153,7 +155,7 @@
         </div>
         <a href="#" class="read-more dark">все проекты<span>&#8594;</span></a>
       </section>
-      <section class="section contact">
+      <section id="contact" class="section contact">
         <h1 class="landing-ttl">Связаться снами </h1>
         <div class="contact__top">
           <div class="contact__left">

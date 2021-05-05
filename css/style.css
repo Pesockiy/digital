@@ -74,6 +74,7 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  user-select: none;
 }
 @media screen and (max-width: 768px) {
   .arrows-wrap {
@@ -140,8 +141,14 @@
   }
 }
 
+html {
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "TT Hoves Regular";
+  overflow-y: scroll;
 }
 
 .container {
@@ -289,6 +296,7 @@ body {
   display: flex;
   justify-content: space-between;
   background-color: #fbfbfb;
+  background-color: red;
 }
 @media screen and (max-width: 992px) {
   .about {
@@ -317,6 +325,9 @@ body {
 }
 .about .img-wrap {
   display: flex;
+  width: 100%;
+  max-width: 270px;
+  min-width: 200px;
   align-self: center;
   justify-content: center;
   align-content: center;
@@ -336,6 +347,7 @@ body {
   .about__right {
     margin: auto;
     margin-top: 80px;
+    max-width: none;
   }
 }
 .about .landing-ttl, .about__text {
@@ -409,6 +421,7 @@ body {
   display: flex;
   align-items: center;
   align-content: center;
+  justify-content: center;
 }
 @media screen and (max-width: 800px) {
   .projects__block {
@@ -432,6 +445,14 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
+.projects__inner {
+  transition: 0.3s;
+  opacity: 0;
+  transform: scale(2);
+}
+.projects__item:nth-of-type(odd) .projects__inner {
+  transform: scale(0.5);
 }
 .projects__item {
   margin-bottom: 30px;
@@ -504,11 +525,6 @@ body {
   justify-content: start;
   background-color: transparent;
   border: 0;
-}
-.projects__inner {
-  transition: 0.3s;
-  opacity: 0;
-  transform: scale(2);
 }
 
 .footer {
