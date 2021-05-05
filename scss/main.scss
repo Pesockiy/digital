@@ -65,6 +65,7 @@
         @media screen and (max-width: $md) {
             left: calc(100% - 53px);
             transform: translateY(-50%) rotate(-90deg);
+            width: 400px;
             transform-origin: 0 0;
         }
     }
