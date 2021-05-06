@@ -180,9 +180,11 @@ body {
 }
 
 .swiper-container {
-    width: 100%;
     @media screen and (max-width: $md) {
         margin-bottom: 30px;
+    }
+    @media screen and (max-width: $sm) {
+        width: 100%;
     }
 }
 
@@ -269,6 +271,9 @@ body {
     @media screen and (max-width: $lg) {
         flex-direction: column;
     }
+    @media screen and (max-width: $sm) {
+        padding: 20px;
+    }
     &__left {
         min-width: 420px;
         margin-right: 30px;
@@ -303,7 +308,7 @@ body {
             margin-top: 30px;
         }
         @media screen and (max-width: $md) {
-            min-width: 130px;
+            min-width: 100px;
         }
     }
     .img-wrap-right {

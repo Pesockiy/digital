@@ -214,12 +214,14 @@ body {
   flex-direction: row-reverse;
 }
 
-.swiper-container {
-  width: 100%;
-}
 @media screen and (max-width: 768px) {
   .swiper-container {
     margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .swiper-container {
+    width: 100%;
   }
 }
 
@@ -306,6 +308,11 @@ body {
     flex-direction: column;
   }
 }
+@media screen and (max-width: 576px) {
+  .about {
+    padding: 20px;
+  }
+}
 .about__left {
   min-width: 420px;
   margin-right: 30px;
@@ -343,7 +350,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .about .img-wrap {
-    min-width: 130px;
+    min-width: 100px;
   }
 }
 .about .img-wrap-right {
