@@ -564,45 +564,6 @@ body {
   border: 0;
 }
 
-.footer {
-  background-color: #2C2C2C;
-}
-.footer__inner {
-  padding-top: 58px;
-  padding-bottom: 44px;
-}
-.footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 23px;
-  text-align: center;
-  color: #fff;
-}
-.footer__list {
-  list-style-type: none;
-  display: flex;
-}
-.footer__list.socials .footer__list--inner {
-  flex-direction: row;
-}
-.footer__list--inner {
-  flex-direction: column;
-}
-.footer__item {
-  margin-bottom: 16px;
-  color: #fff;
-}
-.footer__item-ttl {
-  font-family: "TT Hoves Bold";
-}
-.footer__link {
-  display: inline-block;
-  text-transform: capitalize;
-  font-size: 14px;
-  line-height: 1.6;
-  text-decoration: none;
-  color: inherit;
-}
-
 .contact__left {
   max-width: 392px;
   min-width: 280px;
@@ -676,6 +637,94 @@ body {
 .form__placeholder.required::after {
   content: "*";
   color: red;
+}
+
+.footer {
+  background-color: #2C2C2C;
+}
+.footer__logo {
+  margin-right: 3vw;
+}
+@media screen and (max-width: 768px) {
+  .footer__logo {
+    display: none;
+  }
+}
+.footer__nav, .footer__inner {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 576px) {
+  .footer__nav {
+    flex-direction: column;
+  }
+}
+.footer__inner {
+  padding-top: 58px;
+  padding-bottom: 44px;
+}
+@media screen and (max-width: 576px) {
+  .footer__inner {
+    padding-top: 35px;
+    padding-bottom: 25px;
+  }
+}
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 23px;
+  text-align: center;
+  color: #fff;
+}
+.footer__list {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  margin-right: 3vw;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer__list:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.footer__item {
+  margin-bottom: 16px;
+  color: #fff;
+}
+.footer__item-ttl {
+  font-family: "TT Hoves Bold";
+  margin-bottom: 9px;
+}
+.footer__link {
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+.footer__link:hover {
+  border-color: inherit;
+}
+.footer .contacts .footer__link {
+  border: none;
+  text-transform: none;
+}
+.footer .socials {
+  max-width: 195px;
+  justify-content: start;
+}
+.footer .socials-inner {
+  flex-direction: row;
+}
+.footer .socials__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 21px;
+  height: 21px;
 }
 
 /*# sourceMappingURL=style.css.map */
