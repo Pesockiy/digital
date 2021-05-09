@@ -59,6 +59,12 @@ body {
     padding: 0 15px;
 }
 
+.logo {
+    @media screen and (max-width: $md) {
+        display: none;
+    }
+}
+
 .section {
     margin-bottom: 120px;
     @media screen and (max-width: $lg) {
@@ -232,6 +238,97 @@ body {
 .right-wrap {
     width: 100%;
     max-width: 700px;
+}
+
+.hamburger {
+    position: fixed;
+    display: none;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    z-index: 9999;
+    &:hover {
+        .hamburger__line {
+            visibility: hidden;
+            transition: .3s .5s;
+            transition-delay: .4s;
+        }
+        .hamburger__line::after,
+        .hamburger__line::before {
+            visibility: visible;
+            width: 60%;
+            // transition: background-color .3s, transform .3s;
+            background-color: #000;
+        }
+        .hamburger__line::after {
+            top: auto;
+            transform: rotate(45deg);
+        }
+        .hamburger__line::before {
+            bottom: auto;
+            transform: rotate(-45deg);
+        }
+    }
+    &__line {
+        $hLine: 2px;
+        $pSize: 10px;
+        position: relative;
+        height: $hLine;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc((100% - #{$hLine}) / 2);
+        background-color: chocolate;
+        border-radius: $hLine;
+        transition: .3s ;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-radius: inherit;
+            height: inherit;
+            background-color: inherit;
+            transform-origin: 0 ;
+            transition: background-color 0.4s, transform .3s;
+        }
+        &::after {
+            top: #{$pSize};
+        }
+        &::before {
+            bottom: #{$pSize};
+        }
+    }
+    @media screen and (max-width: $md) {
+        display: block;
+    }
+}
+
+.mobile {
+    position: fixed;
+    max-width: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: $accentColor;
+    &__nav {
+        padding: 50px 30px;
+    }
+    &--list {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .nav__link {
+        font-size: 20px;
+        border-top: none;
+        border-bottom-width: 2px;
+    }
 }
 
 .nav {
@@ -580,14 +677,11 @@ body {
     background-color: $darkColor;
     &__logo {
         margin-right: 3vw;
-        @media screen and (max-width: $md) {
-            display: none;
-        }
     }
     &__nav,
     &__inner {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
     &__nav {
         @media screen and (max-width: $sm) {
