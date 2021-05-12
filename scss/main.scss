@@ -271,8 +271,8 @@ body {
     &.active {
         .hamburger__line {
             visibility: hidden;
-            transition: 0.3s 0.5s;
-            transition-delay: 0.4s;
+            // transition: 0.3s 0.5s;
+            // transition-delay: 0.4s;
         }
         .hamburger__line::after,
         .hamburger__line::before {
@@ -301,7 +301,7 @@ body {
         top: calc((100% - #{$hLine}) / 2);
         background-color: chocolate;
         border-radius: $hLine;
-        transition: 0.3s;
+        // transition: 0.3s;
 
         &::after,
         &::before {
@@ -679,15 +679,15 @@ body {
         &:focus {
             outline: none;
         }
-        &:focus + .form__placeholder {
-            display: none;
-        }
-        &:empty + .form__placeholder {
-            display: block;
-        }
-        &:empty:focus + .form__placeholder {
-            display: none;
-        }
+        // &:focus + .form__placeholder {
+        //     display: none;
+        // }
+        // &:empty + .form__placeholder {
+        //     display: block;
+        // }
+        // &:empty:focus + .form__placeholder {
+        //     display: none;
+        // }
     }
     &__textarea {
         resize: none;
@@ -699,10 +699,13 @@ body {
     }
     &__placeholder {
         position: absolute;
-        display: none;
+        // display: none;
         top: 14px;
         left: 21px;
         color: #8d8d8d;
+        &.hide {
+            display: none;
+        }
         &.required::after {
             content: "*";
             color: red;

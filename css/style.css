@@ -319,8 +319,6 @@ body.noscroll {
 }
 .hamburger.active .hamburger__line {
   visibility: hidden;
-  transition: 0.3s 0.5s;
-  transition-delay: 0.4s;
 }
 .hamburger.active .hamburger__line::after,
 .hamburger.active .hamburger__line::before {
@@ -345,7 +343,6 @@ body.noscroll {
   top: calc((100% - 2px) / 2);
   background-color: chocolate;
   border-radius: 2px;
-  transition: 0.3s;
 }
 .hamburger__line::after, .hamburger__line::before {
   content: "";
@@ -744,15 +741,6 @@ body.noscroll {
 .form__input:focus, .form__textarea:focus {
   outline: none;
 }
-.form__input:focus + .form__placeholder, .form__textarea:focus + .form__placeholder {
-  display: none;
-}
-.form__input:empty + .form__placeholder, .form__textarea:empty + .form__placeholder {
-  display: block;
-}
-.form__input:empty:focus + .form__placeholder, .form__textarea:empty:focus + .form__placeholder {
-  display: none;
-}
 .form__textarea {
   resize: none;
   height: 146px;
@@ -763,10 +751,12 @@ body.noscroll {
 }
 .form__placeholder {
   position: absolute;
-  display: none;
   top: 14px;
   left: 21px;
   color: #8d8d8d;
+}
+.form__placeholder.hide {
+  display: none;
 }
 .form__placeholder.required::after {
   content: "*";

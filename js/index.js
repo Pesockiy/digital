@@ -1,3 +1,5 @@
+
+//slider config
 const swiper = new Swiper('.swiper-container', {
   speed: 400,
   navigation: {
@@ -8,6 +10,7 @@ const swiper = new Swiper('.swiper-container', {
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction',
+    //custom pagination
     renderFraction: function (currentClass, totalClass) {
       return '<span class="' + currentClass + '"></span>' +
         '<span class="separator"></span>' +
@@ -18,25 +21,22 @@ const swiper = new Swiper('.swiper-container', {
 
 });
 
-//hamburger 
+//hamburger button for mobile navigation
 let hamburger = document.querySelector('.hamburger');
 let navbar = document.querySelector('.right-wrap');
 
 hamburger.addEventListener('click', (e) => {
-  e.target.classList.toggle('active');
+  hamburger.classList.toggle('active');
   navbar.classList.toggle('mobile');
   document.querySelector('.header__container').classList.toggle('mobile-wrap')
   document.body.classList.toggle('noscroll')
 })
 
+//custom placeholder
 let inputs = [...document.querySelectorAll('input'), ...document.querySelectorAll('textarea')];
 
-console.log(Array.isArray(inputs), inputs);
-
-for (i of inputs) {
-  i.addEventListener('change', () => {
-    if (i.value.length <= 0) {
-      console.log(i)
-    }
+inputs.forEach(i => {
+  i.addEventListener('input', () => {
+    (i.value.length > 0) ? i.nextSibling.classList.add('hide') : i.nextSibling.classList.remove('hide')
   })
-}
+})
