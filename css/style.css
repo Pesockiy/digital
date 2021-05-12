@@ -198,9 +198,6 @@ body.noscroll {
   color: #333;
   transition: background-color 0.3s, border-color 0.3s;
 }
-.arrow:active {
-  background: none;
-}
 .arrow:hover {
   border-color: #cccccc;
 }
@@ -381,16 +378,16 @@ body.noscroll {
     right: 0;
     z-index: 999;
     align-items: flex-start;
-    padding: 14vh 10vw;
     background-color: #F3F3F3;
   }
-  .mobile-wrap__nav {
-    padding: 50px 30px;
+  .mobile-wrap .mobile__nav {
+    height: 80vh;
+    overflow: auto;
+    padding: 14vh 10vw;
   }
   .mobile-wrap .nav__list {
     display: flex;
-    height: 100vh;
-    max-height: 400px;
+    height: inherit;
     flex-direction: column;
     justify-content: space-between;
   }

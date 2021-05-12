@@ -159,9 +159,6 @@ body {
     background-color: $lighColor;
     color: $darkGrayColor;
     transition: background-color 0.3s, border-color 0.3s;
-    &:active {
-        background: none;
-    }
     &:hover {
         border-color: darken($lightGrayColor, 15);
     }
@@ -339,15 +336,15 @@ body {
         right: 0;
         z-index: 999;
         align-items: flex-start;
-        padding: 14vh 10vw;
         background-color: $accentColor;
-        &__nav {
-            padding: 50px 30px;
+        .mobile__nav {
+            height: 80vh;
+            overflow: auto;
+            padding: 14vh 10vw;
         }
         .nav__list {
             display: flex;
-            height: 100vh;
-            max-height: 400px;
+            height: inherit;
             flex-direction: column;
             justify-content: space-between;
         }
