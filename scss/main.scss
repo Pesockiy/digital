@@ -96,10 +96,13 @@ body {
 }
 
 .header {
+    &__logo {
+        margin-right: 5vw;
+    }
 }
 
 .header__container {
-    padding: 20px 0;
+    padding: 20px 15px;
     @media screen and (max-width: $md) {
         padding: 0;
     }
@@ -212,7 +215,7 @@ body {
 
 .slider-section__left {
     max-width: 280px;
-    margin-right: 2px;
+    margin-right: 20px;
     @media screen and (max-width: $md) {
         max-width: none;
         align-items: center;
@@ -639,7 +642,7 @@ body {
         margin-right: 30px;
         width: 100%;
         @media screen and (max-width: $md) {
-            max-width: 600px;
+            max-width: none;
             margin-right: auto;
         }
     }

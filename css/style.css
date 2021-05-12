@@ -129,8 +129,12 @@ body.noscroll {
   }
 }
 
+.header__logo {
+  margin-right: 5vw;
+}
+
 .header__container {
-  padding: 20px 0;
+  padding: 20px 15px;
 }
 @media screen and (max-width: 768px) {
   .header__container {
@@ -255,7 +259,7 @@ body.noscroll {
 
 .slider-section__left {
   max-width: 280px;
-  margin-right: 2px;
+  margin-right: 20px;
 }
 @media screen and (max-width: 768px) {
   .slider-section__left {
@@ -703,7 +707,7 @@ body.noscroll {
 }
 @media screen and (max-width: 768px) {
   .contact__left {
-    max-width: 600px;
+    max-width: none;
     margin-right: auto;
   }
 }
