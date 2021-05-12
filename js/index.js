@@ -10,7 +10,7 @@ const swiper = new Swiper('.swiper-container', {
     type: 'fraction',
     renderFraction: function (currentClass, totalClass) {
       return '<span class="' + currentClass + '"></span>' +
-      '<span class="separator"></span>' +
+        '<span class="separator"></span>' +
         '<span class="' + totalClass + '"></span>';
     },
   },
@@ -18,13 +18,24 @@ const swiper = new Swiper('.swiper-container', {
 
 });
 
-let inputs = [...document.querySelectorAll('input'),...document.querySelectorAll('textarea')];
+//hamburger 
+let hamburger = document.querySelector('.hamburger');
+let navbar = document.querySelector('.right-wrap');
 
-console.log(Array.isArray(inputs),inputs);
+hamburger.addEventListener('click', (e) => {
+  e.target.classList.toggle('active');
+  navbar.classList.toggle('mobile');
+  document.querySelector('.header__container').classList.toggle('mobile-wrap')
+  document.body.classList.toggle('noscroll')
+})
 
-for(i of inputs) {
+let inputs = [...document.querySelectorAll('input'), ...document.querySelectorAll('textarea')];
+
+console.log(Array.isArray(inputs), inputs);
+
+for (i of inputs) {
   i.addEventListener('change', () => {
-    if(i.value.length <= 0) {
+    if (i.value.length <= 0) {
       console.log(i)
     }
   })
