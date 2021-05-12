@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "TT Hoves Regular";
   font-style: normal;
@@ -748,6 +749,16 @@ body.noscroll {
 .form__group {
   position: relative;
   margin-bottom: 10px;
+}
+.form__group.success {
+  position: relative;
+}
+.form__group.success::before {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 .form__placeholder {
   position: absolute;

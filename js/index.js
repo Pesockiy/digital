@@ -37,6 +37,8 @@ let inputs = [...document.querySelectorAll('input'), ...document.querySelectorAl
 
 inputs.forEach(i => {
   i.addEventListener('input', () => {
-    (i.value.length > 0) ? i.nextSibling.classList.add('hide') : i.nextSibling.classList.remove('hide')
+    let formGroup = i.closest('.form__group');
+    (i.value.length > 0) ? i.nextSibling.classList.add('hide') : i.nextSibling.classList.remove('hide');
+    (i.value.length > 5) ? formGroup.classList.add('success') : formGroup.classList.remove('success');
   })
 })

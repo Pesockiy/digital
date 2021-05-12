@@ -106,7 +106,6 @@ body {
     @media screen and (max-width: $md) {
         padding: 0;
     }
-
 }
 
 .header__container,
@@ -696,6 +695,17 @@ body {
     &__group {
         position: relative;
         margin-bottom: 10px;
+    }
+    &__group.success {
+        position: relative;
+
+        &::before {
+            content: "\2714";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
     }
     &__placeholder {
         position: absolute;
