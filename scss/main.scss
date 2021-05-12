@@ -159,6 +159,9 @@ body {
     background-color: $lighColor;
     color: $darkGrayColor;
     transition: background-color 0.3s, border-color 0.3s;
+    &:active {
+        background: none;
+    }
     &:hover {
         border-color: darken($lightGrayColor, 15);
     }
