@@ -344,7 +344,6 @@ body.noscroll {
   transform: rotate(-45deg);
 }
 .hamburger__line {
-  position: relative;
   height: 2px;
   position: absolute;
   left: 0;
@@ -506,8 +505,7 @@ body.noscroll {
 }
 @media screen and (max-width: 992px) {
   .about__right {
-    margin: auto;
-    margin-top: 80px;
+    margin: 80px auto auto;
     max-width: none;
   }
 }

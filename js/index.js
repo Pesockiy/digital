@@ -19,8 +19,8 @@ let anchors = document.querySelectorAll('a[href^="#"]');
 
 anchors.forEach(anc => {
 
-  anc.addEventListener('click', function(e) {
-    
+  anc.addEventListener('click', function (e) {
+
     e.preventDefault();
     anchors.forEach(a => a.classList.remove('active'));
 
@@ -51,7 +51,7 @@ inputs.forEach(i => {
   });
 });
 
-//fixing header on scroling
+//fixing header on scrolling
 let header = body.querySelector('header');
 
 window.addEventListener('scroll', () => {
@@ -84,3 +84,29 @@ const swiper = new Swiper('.swiper-container', {
   },
 
 });
+
+
+
+  
+  const sections = document.querySelectorAll(".section");
+  const menu_links = document.querySelectorAll(".header .nav__link");
+
+  const makeActive = link => menu_links[link].classList.add("active");
+  const removeActive = link => menu_links[link].classList.remove("active");
+  const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
+
+//offset from top
+  const sectionMargin = 200;
+
+  let currentActive = 0;
+
+  window.addEventListener("scroll", () => {
+
+    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin) - 1
+
+    if (current !== currentActive) {
+      removeAllActive();
+      currentActive = current;
+      makeActive(current);
+    }
+  });
