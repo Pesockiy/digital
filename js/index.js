@@ -51,14 +51,13 @@ inputs.forEach(i => {
   });
 });
 
-
+//fixing header on scroling
 let header = body.querySelector('header');
 
 window.addEventListener('scroll', () => {
 
   let disToTop = document.documentElement.scrollTop;
 
-  console.log(disToTop);
   (disToTop > 0) ? header.classList.add('fixed') : header.classList.remove('fixed');
 
 });
