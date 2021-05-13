@@ -44,7 +44,7 @@
 
 html {
     height: 100vh;
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
 }
 
 body {
@@ -96,6 +96,14 @@ body {
 }
 
 .header {
+    &.fixed {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+    }
     &__logo {
         margin-right: 5vw;
     }
@@ -259,25 +267,22 @@ body {
 .hamburger {
     position: fixed;
     display: none;
-    top: 40px;
-    right: 40px;
+    top: 15px;
+    right: 20px;
     width: 40px;
     height: 40px;
     z-index: 9999;
-    @media screen and (max-width: $lg) {
+    @media screen and (max-width: $md) {
         display: block;
     }
     &.active {
         .hamburger__line {
             visibility: hidden;
-            // transition: 0.3s 0.5s;
-            // transition-delay: 0.4s;
         }
         .hamburger__line::after,
         .hamburger__line::before {
             visibility: visible;
             width: 60%;
-            // transition: background-color .3s, transform .3s;
             background-color: #000;
         }
         .hamburger__line::after {
@@ -340,7 +345,7 @@ body {
         .mobile__nav {
             height: 80vh;
             overflow: auto;
-            padding: 14vh 10vw;
+            padding: 10vh 10vw;
         }
         .nav__list {
             display: flex;

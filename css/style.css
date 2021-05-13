@@ -69,7 +69,6 @@
 
 html {
   height: 100vh;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -130,6 +129,14 @@ body.noscroll {
   }
 }
 
+.header.fixed {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
 .header__logo {
   margin-right: 5vw;
 }
@@ -307,13 +314,13 @@ body.noscroll {
 .hamburger {
   position: fixed;
   display: none;
-  top: 40px;
-  right: 40px;
+  top: 15px;
+  right: 20px;
   width: 40px;
   height: 40px;
   z-index: 9999;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
   .hamburger {
     display: block;
   }
@@ -383,7 +390,7 @@ body.noscroll {
   .mobile-wrap .mobile__nav {
     height: 80vh;
     overflow: auto;
-    padding: 14vh 10vw;
+    padding: 10vh 10vw;
   }
   .mobile-wrap .nav__list {
     display: flex;
